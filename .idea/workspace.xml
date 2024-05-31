@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8073ffe1-a37c-476c-b707-a22efa8ae749" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Doctor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HospitalUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -53,7 +56,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "week-5",
+    "git-widget-placeholder": "week-6",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "D:/personal_projects/java-projects/healthcare-application/src/Main.java",
     "project.structure.last.edited": "Project",
@@ -80,6 +83,17 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added new branch" />
