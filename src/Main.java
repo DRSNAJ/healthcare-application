@@ -1,7 +1,9 @@
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
+    static Hospital mainHospital = new Hospital();
     public static int checkInt(int lBound, int uBound) {
         Scanner scanner = new Scanner(System.in);
         int userInput = lBound - 1;
@@ -48,7 +50,9 @@ public class Main {
             int userInput = checkInt(1, 5);
 
             if (userInput == 1) {
-                System.out.println("View doctors list");
+                System.out.println("\nAll Doctors ---");
+                mainHospital.printDoctorList();
+
             } else if (userInput == 2) {
                 System.out.println("Book an appointment");
             } else if (userInput == 3) {
@@ -70,7 +74,7 @@ public class Main {
             int userInput = checkInt(1, 3);
 
             if (userInput == 1) {
-                System.out.println("Add a doctor");
+                mainHospital.addDoctor();
             } else if (userInput == 2) {
                 System.out.println("Add doctor availability");
             } else if (userInput == 3) {
@@ -84,7 +88,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        mainMenu();
+
+
+
+
+       mainMenu();
 
     }
 }

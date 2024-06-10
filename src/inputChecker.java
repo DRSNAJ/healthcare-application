@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class inputChecker {
 
-    inputChecker(){
+    public inputChecker(){
 
     }
 
