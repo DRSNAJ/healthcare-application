@@ -1,4 +1,4 @@
-import java.lang.reflect.Field;
+import utils.TableBuilder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class Hospital {
         name = scanner.nextLine();
         System.out.print("SPECIALIZATION: ");
         specialization = scanner.nextLine();
-        System.out.print("DOB (YYY-MM-DD): ");
+        System.out.print("DOB (YYYY-MM-DD): ");
         String dobString = scanner.nextLine();
         System.out.print("SEX: ");
         sex = scanner.nextLine();

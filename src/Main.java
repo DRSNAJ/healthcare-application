@@ -4,26 +4,6 @@ import java.util.Scanner;
 
 public class Main {
     static Hospital mainHospital = new Hospital();
-    public static int checkInt(int lBound, int uBound) {
-        Scanner scanner = new Scanner(System.in);
-        int userInput = lBound - 1;
-        boolean retry = false;
-
-        while (userInput < lBound || userInput > uBound) {
-            while (!retry) {
-                try {
-                    System.out.print("Input: ");
-                    userInput = scanner.nextInt();
-                    retry = true;
-                } catch (InputMismatchException exception) {
-                    System.out.println("Incorrect input format");
-                    scanner.next();
-                    retry = false;
-                }
-            }
-        }
-        return userInput;
-    }
 
     public static void mainMenu() {
 

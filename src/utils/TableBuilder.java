@@ -1,6 +1,6 @@
-import java.lang.reflect.Array;
+package utils;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TableBuilder {
     ArrayList<ArrayList<String>> table = new ArrayList<>();
