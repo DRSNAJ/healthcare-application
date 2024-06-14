@@ -1,3 +1,4 @@
+import utils.InputCheck;
 import utils.TableBuilder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -8,6 +9,7 @@ public class Hospital {
 
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     private ArrayList<Doctor> doctorList = new ArrayList<>();
+    static InputCheck inputChecker = new InputCheck();
 
     public Hospital() {
 
@@ -28,8 +30,7 @@ public class Hospital {
         name = scanner.nextLine();
         System.out.print("SPECIALIZATION: ");
         specialization = scanner.nextLine();
-        System.out.print("DOB (YYYY-MM-DD): ");
-        String dobString = scanner.nextLine();
+        String dobString = inputChecker.dateCheck("yyyy-MM-dd", "DOB (YYYY-MM-DD): ");
         System.out.print("SEX: ");
         sex = scanner.nextLine();
         System.out.print("CONTACT NUM: ");

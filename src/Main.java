@@ -1,15 +1,18 @@
+import utils.InputCheck;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     static Hospital mainHospital = new Hospital();
+    static InputCheck inputChecker = new InputCheck();
 
     public static void mainMenu() {
 
         while (true) {
             System.out.println("\nIf you are a hospital administrator please press 1, If you are a patient please press 2, Press 3 to exit");
-            int userInput = checkInt(1, 3);
+            int userInput = inputChecker.checkInt(1, 3);
             if (userInput == 1) {
                 adminMenu();
             } else if (userInput == 2) {
@@ -27,7 +30,7 @@ public class Main {
         while (true) {
             System.out.println("\nPress 1 to view doctors, press 2 to book an appointment, " +
                     "press 3 to view a selected doctor's bookings, press 4 to register patient and press 5 to exit");
-            int userInput = checkInt(1, 5);
+            int userInput = inputChecker.checkInt(1, 5);
 
             if (userInput == 1) {
                 System.out.println("\nAll Doctors ---");
@@ -51,7 +54,7 @@ public class Main {
     public static void adminMenu() {
         while (true) {
             System.out.println("\nPress 1 to add a doctor, press 2 to add a doctor availability, and press 3 to exit");
-            int userInput = checkInt(1, 3);
+            int userInput = inputChecker.checkInt(1, 3);
 
             if (userInput == 1) {
                 mainHospital.addDoctor();
