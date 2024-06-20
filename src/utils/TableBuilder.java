@@ -11,7 +11,7 @@ public class TableBuilder {
         this.headers = headers;
     }
 
-    public void setTableData(ArrayList<ArrayList<String>> userTable) {
+    public  void setTableData(ArrayList<ArrayList<String>> userTable) {
         this.table = userTable;
 
         table.addFirst(headers);
@@ -51,7 +51,7 @@ public class TableBuilder {
     }
 
     public void printTable() {
-        System.out.println("\n" + this.tableString);
+        System.out.println(this.tableString);
     }
 
     ;

@@ -12,7 +12,7 @@ public class InputCheck {
 
     }
 
-    public int checkInt(int lBound, int uBound) {
+    public static int checkInt(int lBound, int uBound) {
         Scanner scanner = new Scanner(System.in);
         int userInput = lBound - 1;
         boolean retry = false;
@@ -35,7 +35,7 @@ public class InputCheck {
         return userInput;
     }
 
-    public String dateCheck(String dateFormatString, String userPrompt) {
+    public static String dateCheck(String dateFormatString, String userPrompt) {
         Scanner scanner = new Scanner(System.in);
         Date checkedDate = null;
         String dateSting = null;
