@@ -3,16 +3,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.SplittableRandom;
 
-public class HospitalUser {
-    String id;
-    String name;
+abstract class HospitalUser {
+    private String id;
+    private String name;
     Date dob;
     String sex;
     String contactNumber;
+    private static int instanceCount;
 
-    public HospitalUser(String id, String name, String dobString, String sex, String contactNumber) {
+    public HospitalUser(String name, String dobString, String sex, String contactNumber) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        this.id = id;
+        setId();
         this.name = name;
         try {
             this.dob = dateFormat.parse(dobString);
@@ -21,7 +22,27 @@ public class HospitalUser {
         }
         this.sex = sex;
         this.contactNumber = contactNumber;
+    }
 
+    public String getId() {
+        return id;
+    }
+
+    private void setId(){
+        StringBuilder builder = new StringBuilder();
+        int idLen = 12;
+        instanceCount++;
+
+        this.id = String.format("%0" + idLen + "d", instanceCount);
+
+    }
+
+    protected void augmentId(String appendStr) {
+        this.id = appendStr + '-' + this.id;
+    }
+
+    public String getName() {
+        return name;
     }
 }
 

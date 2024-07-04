@@ -8,15 +8,16 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class Doctor extends HospitalUser {
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    String specialization;
-    ArrayList<Date> availabilities = new ArrayList<>();
-    HashMap<Date, ArrayList<Appointment>> appointments = new HashMap<>();
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private String specialization;
+    private ArrayList<Date> availabilities = new ArrayList<>();
+    private HashMap<Date, ArrayList<Appointment>> appointments = new HashMap<>();
 
     public Doctor(String name, String dobString, String sex, String contactNumber, String specialization) {
-        super(null, name, dobString, sex, contactNumber);
+        super(name, dobString, sex, contactNumber);
         this.specialization = specialization;
-        setDoctorId();
+        augmentId("d"+Character.toLowerCase(specialization.charAt(0)));
+
     }
 
     public boolean isPhysician() {
@@ -24,17 +25,24 @@ public class Doctor extends HospitalUser {
         return this.specialization.endsWith(checkStr);
     }
 
-    private void setDoctorId() {
-        StringBuilder builder = new StringBuilder();
-        builder.append('d').append(Character.toLowerCase(specialization.charAt(0))).append('-');
-        int idLen = 12;
+//    private void setDoctorId() {
+//        StringBuilder builder = new StringBuilder();
+//        builder.append('d').append(Character.toLowerCase(specialization.charAt(0))).append('-');
+//        int idLen = 12;
+//
+//        for (int i = 0; i < idLen; i++) {
+//            builder.append((int) (Math.random() * 9));
+//        }
+//        this.id = builder.toString();
+//    }
 
-        for (int i = 0; i < idLen; i++) {
-            builder.append((int) (Math.random() * 9));
-        }
-        this.id = builder.toString();
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
     }
 
+    public String getSpecialization() {
+        return specialization;
+    }
 
     public void printAvailabilities() {
         ArrayList<String> availabilitiesHeaders = new ArrayList<>();
@@ -47,14 +55,14 @@ public class Doctor extends HospitalUser {
         ArrayList<ArrayList<String>> timeSlotStrings = new ArrayList<>();
 
         String cellString = "";
-        for (String timeString: Appointment.timeSlots) {
+        for (String timeString : Appointment.timeSlots) {
             ArrayList<String> row = new ArrayList<>();
             for (Date checkDate : availabilities) {
                 cellString = timeString;
                 if (appointments.containsKey(checkDate)) {
                     ArrayList<Appointment> appListPrint = appointments.get(checkDate);
-                    for (Appointment app : appListPrint){
-                        if (timeString.equals(app.time)){
+                    for (Appointment app : appListPrint) {
+                        if (timeString.equals(app.time)) {
                             cellString = "-";
                         }
                     }
@@ -69,8 +77,8 @@ public class Doctor extends HospitalUser {
         TableBuilder doctorTable = new TableBuilder(availabilitiesHeaders);
         doctorTable.setTableData(timeSlotStrings);
 
-        System.out.println("\nID: " + id);
-        System.out.println("Name: " + name);
+        System.out.println("\nID: " + getId());
+        System.out.println("Name: " + getName());
         System.out.println("Specialization: " + specialization);
         System.out.println("Available Appointments----------------------");
         doctorTable.printTable();
@@ -107,8 +115,8 @@ public class Doctor extends HospitalUser {
 
         for (Date availability : availabilities) {
             if (availability.equals(queryDate) && appointments.containsKey(queryDate)) {
-                for (Appointment checkAppoint : appointments.get(queryDate)){
-                    if (checkAppoint.slot == slot){
+                for (Appointment checkAppoint : appointments.get(queryDate)) {
+                    if (checkAppoint.slot == slot) {
                         return false;
                     }
                 }

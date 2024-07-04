@@ -77,8 +77,8 @@ public class Hospital {
 
         System.out.println("\n==========================");
         printPatientList();
-        System.out.println("ID: " + patientList.get(0).id);
-        System.out.println("Name: " + patientList.get(0).name);
+        System.out.println("ID: " + patientList.get(0).getId());
+        System.out.println("Name: " + patientList.get(0).getName());
     }
 
     public static void addDoctor() {
@@ -134,9 +134,9 @@ public class Hospital {
         ArrayList<ArrayList<String>> doctorListStrings = new ArrayList<>();
         for (Doctor doc : doctorList) {
             ArrayList<String> doctorString = new ArrayList<>();
-            doctorString.add(doc.id);
-            doctorString.add(doc.name);
-            doctorString.add(doc.specialization);
+            doctorString.add(doc.getId());
+            doctorString.add(doc.getName());
+            doctorString.add(doc.getSpecialization());
             doctorString.add(dateFormat.format(doc.dob));
             doctorString.add(doc.sex);
             doctorString.add(doc.contactNumber);
@@ -154,7 +154,7 @@ public class Hospital {
         System.out.print("Enter the doctors ID: ");
         String docID = scanner.nextLine();
         for (Doctor doc : doctorList) {
-            if (docID.equals(doc.id)) {
+            if (docID.equals(doc.getId())) {
                 String inputDate = InputCheck.dateCheck("yyyy-MM-dd", "Enter an availability date (YYYY-MM-DD): ");
                 doc.setAvailabilities(inputDate);
             }
@@ -163,7 +163,7 @@ public class Hospital {
 
     public static Doctor findDoctor(String id) throws Exception {
         for (Doctor doc : doctorList) {
-            if (id.equals(doc.id)) {
+            if (id.equals(doc.getId())) {
                 return doc;
             }
         }
@@ -172,7 +172,7 @@ public class Hospital {
 
     public static Patient findPatient(String id) throws Exception {
         for (Patient patient : patientList) {
-            if (id.equals(patient.id)) {
+            if (id.equals(patient.getId())) {
                 return patient;
             }
         }
@@ -208,7 +208,7 @@ public class Hospital {
                     newAppointment.setDate(dateString);
 
                     for (Doctor doc : doctorList) {
-                        if (doc.id.equals(doctorId)) {
+                        if (doc.getId().equals(doctorId)) {
                             doc.setAppointments(dateString, newAppointment);
                             System.out.println("\n\nAPPOINTMENT SUCCESSFULLY BOOKED");
                             doc.printAvailabilities();
@@ -241,8 +241,8 @@ public class Hospital {
         ArrayList<ArrayList<String>> patientListStrings = new ArrayList<>();
         for (Patient pat : patientList) {
             ArrayList<String> doctorString = new ArrayList<>();
-            doctorString.add(pat.id);
-            doctorString.add(pat.name);
+            doctorString.add(pat.getId());
+            doctorString.add(pat.getName());
             doctorString.add(dateFormat.format(pat.dob));
             doctorString.add(pat.sex);
             doctorString.add(pat.contactNumber);
