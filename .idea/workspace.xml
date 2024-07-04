@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8073ffe1-a37c-476c-b707-a22efa8ae749" name="Changes" comment="table bulder and input checker classes defined">
-      <change afterPath="$PROJECT_DIR$/src/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hospital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InputCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/InputCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/TableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/TableBuilder.java" afterDir="false" />
-    </list>
+    <list default="true" id="8073ffe1-a37c-476c-b707-a22efa8ae749" name="Changes" comment="table bulder and input checker classes defined" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +94,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718349622888</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="table bulder and input checker classes defined">
+      <option name="closed" value="true" />
+      <created>1718894581510</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718894581510</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
